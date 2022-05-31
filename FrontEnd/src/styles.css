@@ -1,0 +1,205 @@
+@import 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css';
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
+
+body {
+  background: #f5f5f5;
+}
+
+.bg-dark {
+  background-color: #009961 !important;
+}
+
+a {
+  cursor: pointer;
+}
+
+a:hover {
+color: #009961;
+}
+
+.navbar {
+height: 70px !important;
+}
+
+.card {
+  border: none;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .05);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .05);
+  margin-bottom: 30px;
+}
+
+.w-60 {
+  width: 60px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.social-links li a {
+  -webkit-border-radius: 50%;
+  background-color: rgba(89, 206, 181, .85);
+  border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  width: 30px;
+  font-size: 12px;
+}
+
+a {
+  color: #707070;
+}
+
+i {
+  color: white;
+}
+
+.nav-bt {
+  margin-right: 20px !important;
+  padding: 8px 15px !important;
+  font-weight: bold;
+  font-size: 18px !important;
+border: #fff;
+border-radius: 5%;
+}
+
+.nav-bt:hover {
+  color: #009961 !important;
+  background-color: #fff;
+  font-size: 20px !important;
+}
+
+#searchEmployees {
+  margin-left: 50px;
+}
+
+.editbtn {
+  background-color: white;
+  width: 50px;
+  height: auto;
+  border-color: white;
+}
+
+.editbtn:hover {
+  background-color: #009961;
+  width: 50px;
+  height: auto;
+  border-color: #009961;
+}
+
+.tabEcoMonitoring {
+  padding: 0 15px !important;
+}
+
+.tabEcoMonitoring:hover {
+  color: #009961;
+}
+
+.separator-png {
+  background-image: url(https://mepr.gov.ua/front/img/separator.png);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  height: 50px;
+}
+
+header{
+position: fixed;
+width: 100%;
+z-index: 1;
+height: 100px !important;
+}
+
+section{
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+}
+
+.air_icon{
+  background: skyblue !important;
+}
+
+.services .box_air_icon:hover  h4 a {
+  color: skyblue !important;
+}
+
+.services .box_air_icon:hover {
+  border-color: skyblue;
+}
+
+
+.radiation_icon{
+  background: orangered !important;
+}
+
+.services .box_radiation_icon:hover  h4 a {
+  color: orangered !important;
+}
+
+.services .box_radiation_icon:hover {
+  border-color: orangered;
+}
+
+.fire_icon{
+  background: red !important;
+}
+
+.services .box_fire_icon:hover  h4 a {
+  color: red !important;
+}
+
+.services .box_fire_icon:hover {
+  border-color: red;
+}
+
+.contact .info {
+  width: 100%;
+  background: #F5F5F5;
+}
+
+.SendMessage{
+  padding: 5px 15px;
+  margin: 1px;
+  background: #009961;
+  color: #fff;
+  border-color: #009961;
+  border-radius: 5%;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.SendMessage:hover {
+  color: #009961 !important;
+  background: #fff;
+}
+
+#myModal{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 250px;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+#_myModal{
+  background-color: #009961;
+  color: #fff;
+  font-size: 20px;
+  margin: auto;
+  padding: 25px;
+  width: 15%;
+  text-align: center;
+  border-radius: 3%;
+}
+
+
+

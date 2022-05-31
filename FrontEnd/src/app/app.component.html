@@ -1,0 +1,1471 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" style="color:white; font-size: 25px;"><img src="favicon.ico" alt="">⠀EcoMonitor</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+            aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <form class="form-inline my-2 my-lg-0" id="searchEmployees">
+        <input type="search" (ngModelChange)="searchEmployees(key.value)" #key="ngModel" ngModel
+               name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search users..." required
+               size="120%">
+      </form>
+      <ul class="navbar-nav mr-auto" style="display: inline-flex; position: absolute; right: 0;">
+        <li class="nav-item active" id="singUp">
+          <a class="nav-link nav-bt" (click)="onOpenModal(null, 'add')">Sing up <span
+            class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active" id="singIn">
+          <a class="nav-link nav-bt" (click)="onSingIn()">Sing in<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active" id="Exit">
+          <a class="nav-link" (click)="onExit()">
+            <i class="fa fa-sign-out" style="font-size: 30px; margin-right: 20px;"></i>
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!--welcome page-->
+<div id="main_welcome_my_page">
+  <!-- ======= Hero Section ======= -->
+
+  <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-8">
+          <h1>EcoMonitor</h1>
+          <h2>система обліку швідливих викидів<br>
+            <i style="color: #009961;">[</i>
+                 Ми активно стежимо за станом довкілля
+              <i style="color: #009961;">]</i></h2>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About Us</h2>
+          <p>Наша місія - покращити якість повітря в країнах, що розвиваються, шляхом підвищення рівня екологічної
+            обізнаності громадян шляхом надання їм безкоштовного та легкого доступу до індексу якості повітря та інших
+            публічних екологічних даних.</p>
+        </div>
+
+        <div class="row content">
+          <p>
+            Тут ви можете:
+          </p>
+          <ul>
+            <li><i class="ri-check-double-line"></i>Переглянути статистику якості повітря в різних регіонах</li>
+            <li><i class="ri-check-double-line"></i>Залишити скаргу на забруднення</li>
+            <li><i class="ri-check-double-line"></i>Зареєструватись та допомогти нам із збереженням клімату планети</li>
+          </ul>
+        </div>
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container">
+
+        <div class="text-center title">
+          <h3>Спірними зусилями було досягнуто:</h3>
+        </div>
+
+        <div class="row counters position-relative">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+                  class="purecounter"></span>
+            <p>чистих природних зон</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="17" data-purecounter-duration="1"
+                  class="purecounter"></span>
+            <p>видів тварин збережено</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="16463" data-purecounter-duration="1"
+                  class="purecounter"></span>
+            <p>тварин продовжили здорове життя</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="45" data-purecounter-duration="1"
+                  class="purecounter"></span>
+            <p>створено центрів захисту довкілля</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>Ознайомтесь з картами спостережень за навколишнім середовищем зібрані з понад 25 джерел даних про стан
+            довкілля</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="box_air_icon icon-box ">
+              <div class="icon air_icon"><i class="bx bx-wind"></i></div>
+              <h4><a (click)="onOpenMapModal('air')">Мапа якості повітря</a></h4>
+              <p>Знайдіть станцію поблизі місця проживання та ознайомтесь із інформацією про стан якості, щоб
+                переконитись у відсутності загроси</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="box_radiation_icon icon-box ">
+              <div class="icon radiation_icon"><i class="bx bxs-radiation"></i></div>
+              <h4><a (click)="onOpenMapModal('radiation')">Карта радіаційного фону</a></h4>
+              <p>Перегляньте власне місце знаходження, щоб переканитись у відсутності радіаційної загроси</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+            <div class="box_fire_icon icon-box ">
+              <div class="icon fire_icon"><i class="fa fa-fire"></i></div>
+              <h4><a (click)="onOpenMapModal('fire')">Карта пожеж</a></h4>
+              <p>Ознайомтесь із картою пожеш у своєму регіоні і не тільки</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <div class="col-md-12">
+      <div class="separator-png"></div>
+    </div>
+
+    <!-- ======= Faq Section ======= -->
+    <section id="faq" class="faq">
+      <div class="container-fluid">
+
+        <div class="row">
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+            <div class="content">
+              <h3>Підтримайте нас</h3>
+              <p>
+                Прохання, якщо помітили еко загрозу повідомте нас
+                <br> просимо ознайомитись із наступними пунктами перед поданням.
+              </p>
+            </div>
+
+            <div class="accordion-list">
+              <ul>
+                <li>
+                  <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1">
+                    Зауважимо, що:
+                    <i class="bx bx-chevron-down icon-show"></i>
+                    <i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                    <p>
+                      Деякі екозлочини можуть відповідати відразу декільком категоріям, тоді просимо обрати одну, яка,
+                      на вашу думку, найповніше описує те, що трапилося.
+                      <br><br>
+                      Деякі екозлочини можуть не відповідати запропонованим категоріям, тоді оберіть категорію «інше».
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed">
+                    Куди відправляються мої повідомлення? <i class="bx bx-chevron-down icon-show"></i>
+                    <i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                    <p>
+                      Усі повідомлення про екологічні загроси та воєнні злочини проти довкілля автоматично, за допомогою
+                      API, відправляються до нашого оперативного штабу захисту довкілля.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed">
+                    Додатково <i class="bx bx-chevron-down icon-show"></i>
+                    <i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                    <p>
+                      Уся інформація, яку ви надаєте на нам, є знеособленою та конфіденційною.
+                      <br>
+                      Потрібно прикріпити відео екологічного злочину просто при подані.
+                      <br>
+                      Відправляй повідомлення про екологічні злочини проти довкілля зі свого смартфону будь-де і
+                      будь-коли! </p>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
+               style='background-image: url("assets/img/faq.jpg");'>&nbsp;
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Faq Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3>Подати скаргу</h3>
+            <p>Ви можете подати скаргу на забруднення довкілля, для цього потрібно заповнити форму.
+              <br>За бажанням залиште контактні дані ми обов'язково зв'яжемось із вами.</p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a (click)="onOpenUserComplaintModal(null, 'add')" class="cta-btn align-middle" style="color: #fff  !important; font-weight:bold;">Подати</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="row mt-5">
+          <div class="section-title">
+            <h2>Contact</h2>
+          </div>
+          <div class="col-lg-4" style="background: inherit !important;">
+
+            <div class="info">
+              <div class="address">
+                <i class="ri-map-pin-line"></i>
+                <h4>Location:</h4>
+                <p>вулиця Степана Бандери, 12, Львів,</p>
+              </div>
+
+              <div class="email">
+                <i class="ri-mail-line"></i>
+                <h4>Email:</h4>
+                <p>klimchukmikhail57@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="ri-phone-line"></i>
+                <h4>Call:</h4>
+                <p>+38098 784 50 77</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+            <form style="  background: #F5F5F5;" id="contact-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="user_name" class="form-control" placeholder="Your Full Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="user_email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="SendMessage" id="myBtn">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+    <div id="myModal">
+      <div id="_myModal">
+        <p><i class="fa fa-check"></i> Відправлено!</p>
+      </div>
+    </div>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3><img src="favicon.ico" alt="" style="width: 40px;height:auto;"> EcoMinotor</h3>
+      <div class="social-links">
+        <a href="https://twitter.com/" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100013029480208" class="facebook"><i
+          class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/mykhailoklymchuk/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="www.linkedin.com/in/MykhailoKlymchuk" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://github.com/MykhailoKlymchuk" class="github"><i class="bx bxl-github"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Сайт розроблений <strong style="color:#009961;"><span>Климчуком Михайлом</span></strong> Усі права
+        захищені.
+      </div>
+      <div class="credits">
+        Курсова робота <i style="color: #009961;">[</i> веб технології та веб дизайн  <i style="color: #009961;">]</i>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+</div>
+
+<!--user profile and statistic-->
+<div class="container bootstrap snippets bootdey" id="simpleUserProfile" style="display: none;">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="separator-png" style="height: 30px;"></div>
+    </div>
+    <div class="col-sm-3">
+      <!--left col-->
+      <ul class="list-group">
+        <li class="list-group-item text-muted text-right">
+          <span class="pull-left" style="padding-top: 5px !important;">Profile</span>
+          <a (click)="onOpenModal(currentEmployee!, 'edit')"
+             class="btn btn-primary tooltips editbtn" data-placement="top" data-original-title="Edit">Edit
+          </a>
+        </li>
+        <li class="list-group-item text-right">
+          <span class="pull-left" style="padding-top: 30px !important;"><strong>Photo</strong></span>
+          <img *ngIf="currentEmployee!.imageUrl.length>=10" title="profile image pull-left"
+               class="img-circle img-responsive" style="width: 40%; height: auto;border-radius: 50%;"
+               src="{{currentEmployee?.imageUrl}}">
+          <img *ngIf="currentEmployee!.imageUrl.length<=10" title="profile image pull-left"
+               class="img-circle img-responsive" style="width: 40%; height: auto;border-radius: 50%;"
+               src="https://media.istockphoto.com/vectors/error-page-or-file-not-found-icon-vector-id924949200?k=20&m=924949200&s=170667a&w=0&h=-g01ME1udkojlHCZeoa1UnMkWZZppdIFHEKk6wMvxrs=">
+        </li>
+        <li class="list-group-item text-right">
+          <span class="pull-left"><strong>Name</strong></span>{{currentEmployee?.name}}
+        </li>
+        <li class="list-group-item text-right">
+          <span class="pull-left"><strong>Job</strong></span>{{currentEmployee?.jobTitle}}
+        </li>
+        <li class="list-group-item text-right">
+          <span class="pull-left"><strong>Education</strong></span>{{currentEmployee?.education}}
+        </li>
+        <li class="list-group-item text-right">
+          <a (click)="onOpenModal(currentEmployee!, 'openLocation')">
+            <span class="pull-left"><strong>Location</strong></span>{{currentEmployee?.location}}
+            </a>
+        </li>
+        <li class="list-group-item text-right">
+          <span class="pull-left"><strong>Email</strong></span>{{currentEmployee?.email}}
+        </li>
+        <li class="list-group-item text-right">
+          <span class="pull-left"><strong>Phone</strong></span>{{currentEmployee?.phone}}
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-sm-9">
+      <ul class="nav nav-tabs" id="myTab">
+        <li class="text-muted" style="padding-left: 5px;">Скарги користувачів:</li>
+        <li><a href="#inactive" data-toggle="tab" class="tabEcoMonitoring">Не розглянуті</a></li>
+        <li><a href="#active" data-toggle="tab" class="tabEcoMonitoring">Обробляються</a></li>
+        <li><a href="#completed" data-toggle="tab" class="tabEcoMonitoring">Опрацьовані</a></li>    
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="inactive">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+              <tr>
+                <th>№</th>
+                <th>Статус</th>
+                <th>Повне ім'я</th>
+                <th>Контакти</th>
+                <th>⠀⠀⠀Дата⠀⠀⠀</th>
+                <th>Локація</th>
+                <th>⠀⠀⠀Тип⠀⠀⠀</th>
+                <th>Відео</th>
+                <th>Опис</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody id="items" *ngFor="let userComplaint of userComplaints">
+              <tr *ngIf="userComplaint?.status == 'inactive'">
+                <td>{{userComplaint?.id}}</td>
+                <td *ngIf="userComplaint?.status == 'inactive'" style="color: rgb(185, 37, 27); font-weight: bold;">
+                  <a (click)="onOpenUserComplaintModal(userComplaint, 'changeStatus')">{{userComplaint?.status}}</a>
+                </td>
+                <td>{{userComplaint?.fullName}}</td>
+                <td>{{userComplaint?.contact}}</td>
+                <td>{{userComplaint?.date}}</td>
+                <td><a (click)="onOpenUserComplaintModal(userComplaint, 'openLocation')">{{userComplaint?.location}}</a></td>
+                <td>{{userComplaint?.type}}</td>
+                <td>
+                  <a (click)="onOpenUserComplaintModal(userComplaint, 'openVideo')" title='{{userComplaint?.videoUrl}}'>view</a>
+                </td>
+                <td>{{userComplaint?.description}}</td>
+                <td *ngIf="userComplaint?.status == 'completed'"><a (click)="onOpenUserComplaintModal(userComplaint, 'delete')"
+                  style="background-color: rgb(185, 37, 27); color: white; "
+                  class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i
+             class="fa fa-times"></i></a></td>
+              </tr>
+              </tbody>
+            </table>
+            <hr>
+            <div class="row">
+              <div class="col-md-4 col-md-offset-4 text-center">
+                <ul class="pagination" id="myPager"></ul>
+              </div>
+            </div>
+          </div>
+          <!--/table-resp-->
+          <hr>
+        </div>
+
+        <div class="tab-pane active" id="active">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+              <tr>
+                <th>№</th>
+                <th>Статус</th>
+                <th>Повне ім'я</th>
+                <th>Контакти</th>
+                <th>⠀⠀⠀Дата⠀⠀⠀</th>
+                <th>Локація</th>
+                <th>⠀⠀⠀Тип⠀⠀⠀</th>
+                <th>Відео</th>
+                <th>Опис</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody id="items" *ngFor="let userComplaint of userComplaints">
+              <tr *ngIf="userComplaint?.status == 'active'">
+                <td>{{userComplaint?.id}}</td>
+                <td *ngIf="userComplaint?.status == 'active'" style="color: blue; font-weight: bold;">
+                  <a (click)="onOpenUserComplaintModal(userComplaint, 'changeStatus')">{{userComplaint?.status}}</a>
+                </td>
+                <td>{{userComplaint?.fullName}}</td>
+                <td>{{userComplaint?.contact}}</td>
+                <td>{{userComplaint?.date}}</td>
+                <td><a (click)="onOpenUserComplaintModal(userComplaint, 'openLocation')">{{userComplaint?.location}}</a></td>
+                <td>{{userComplaint?.type}}</td>
+                <td>
+                  <a (click)="onOpenUserComplaintModal(userComplaint, 'openVideo')" title='{{userComplaint?.videoUrl}}'>view</a>
+                </td>
+                <td>{{userComplaint?.description}}</td>
+                <td *ngIf="userComplaint?.status == 'completed'"><a (click)="onOpenUserComplaintModal(userComplaint, 'delete')"
+                  style="background-color: rgb(185, 37, 27); color: white; "
+                  class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i
+             class="fa fa-times"></i></a></td>
+              </tr>
+              </tbody>
+            </table>
+            <hr>
+            <div class="row">
+              <div class="col-md-4 col-md-offset-4 text-center">
+                <ul class="pagination" id="myPager"></ul>
+              </div>
+            </div>
+          </div>
+          <!--/table-resp-->
+          <hr>
+        </div>
+
+        <div class="tab-pane active" id="completed">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+              <tr>
+                <th>№</th>
+                <th>Статус</th>
+                <th>Повне ім'я</th>
+                <th>Контакти</th>
+                <th>⠀⠀⠀Дата⠀⠀⠀</th>
+                <th>Локація</th>
+                <th>⠀⠀⠀Тип⠀⠀⠀</th>
+                <th>Відео</th>
+                <th>Опис</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody id="items" *ngFor="let userComplaint of userComplaints">
+              <tr *ngIf="userComplaint?.status == 'completed'">
+                <td>{{userComplaint?.id}}</td>
+                <td *ngIf="userComplaint?.status == 'completed'" style="color: #009961; font-weight: bold;">
+                  <a (click)="onOpenUserComplaintModal(userComplaint, 'changeStatus')">{{userComplaint?.status}}</a>
+                </td>
+                <td>{{userComplaint?.fullName}}</td>
+                <td>{{userComplaint?.contact}}</td>
+                <td>{{userComplaint?.date}}</td>
+                <td><a (click)="onOpenUserComplaintModal(userComplaint, 'openLocation')">{{userComplaint?.location}}</a></td>
+                <td>{{userComplaint?.type}}</td>
+                <td>
+                  <a (click)="onOpenUserComplaintModal(userComplaint, 'openVideo')" title='{{userComplaint?.videoUrl}}'>view</a>
+                </td>
+                <td>{{userComplaint?.description}}</td>
+                <td *ngIf="userComplaint?.status == 'completed'"><a (click)="onOpenUserComplaintModal(userComplaint, 'delete')"
+                  style="background-color: rgb(185, 37, 27); color: white; "
+                  class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i
+             class="fa fa-times"></i></a></td>
+              </tr>
+              </tbody>
+            </table>
+            <hr>
+            <div class="row">
+              <div class="col-md-4 col-md-offset-4 text-center">
+                <ul class="pagination" id="myPager"></ul>
+              </div>
+            </div>
+          </div>
+          <!--/table-resp-->
+          <hr>
+        </div>
+      </div>
+      <!--/tab-pane-->
+    </div>
+
+    <div class="col-md-12">
+      <div class="separator-png"></div>
+    </div>
+
+    <div class="col-sm-3">
+      <!--left col-->
+      <ul class="list-group">
+        <li class="list-group-item text-muted text-right">
+          <form class="form-inline my-2 my-lg-0" id="searchPollution">
+            <input type="search" (ngModelChange)="searchPollution(keyPollution.value)" #keyPollution="ngModel" ngModel
+                   name="keyPollution" class="form-control mr-sm-2" placeholder="Search..." required>
+          </form>
+        </li>
+        <li class="list-group-item text-muted text-right">
+          <span class="pull-left" style="padding-top: 5px !important;">Вода</span>
+          <a (click)="onOpenWaterModal(null, 'add')"
+             class="btn btn-primary tooltips editbtn" data-placement="top" data-original-title="Add⠀">Add⠀
+          </a>
+        </li>
+        <li class="list-group-item text-muted text-right">
+          <span class="pull-left" style="padding-top: 5px !important;">Грунт</span>
+          <a (click)="onOpenSoilModal(null, 'add')"
+             class="btn btn-primary tooltips editbtn" data-placement="top" data-original-title="Edit">Add⠀
+          </a>
+        </li>
+        <li class="list-group-item text-muted text-right">
+          <span class="pull-left" style="padding-top: 5px !important;">Повітря</span>
+          <a (click)="onOpenAirModal(null, 'add')"
+             class="btn btn-primary tooltips editbtn" data-placement="top" data-original-title="Edit">Add⠀
+          </a>
+        </li>
+        <li class="list-group-item text-muted text-right">
+          <span class="pull-left" style="padding-top: 5px !important;">Радіаційний стан</span>
+          <a (click)="onOpenRadiationModal(null, 'add')"
+             class="btn btn-primary tooltips editbtn" data-placement="top" data-original-title="Edit">Add⠀
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-sm-9">
+      <ul class="nav nav-tabs" id="myTab">
+        <li class="text-muted" style="padding-left: 5px;">Звітність забруднень:</li>
+        <li><a href="#water" data-toggle="tab" class="tabEcoMonitoring">Вода</a></li>
+        <li><a href="#soil" data-toggle="tab" class="tabEcoMonitoring">Грунт</a></li>
+        <li><a href="#air" data-toggle="tab" class="tabEcoMonitoring">Повітря</a></li>
+        <li><a href="#radiation" data-toggle="tab" class="tabEcoMonitoring">Радіаційний стан</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="water">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+              <tr>
+                <th>№</th>
+                <th>Локація</th>
+                <th>Дата</th>
+                <th>pH</th>
+                <th>Густина</th>
+                <th>Твердність</th>
+                <th>Сульфати</th>
+                <th>Хлориди</th>
+                <th>Мідь</th>
+                <th>Марганець</th>
+                <th>Залізо</th>
+                <th>Хлорфенол</th>
+                <th>Опис</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody id="items" *ngFor="let waterPollution of waterPollutions">
+              <tr>
+                <td>{{waterPollution?.id}}</td>
+                <td><a (click)="onOpenWaterModal(waterPollution, 'openLocation')">{{waterPollution?.location}}</a></td>
+                <td>{{waterPollution?.date}} </td>
+                <td>{{waterPollution?.pH}} </td>
+                <td>{{waterPollution?.density}}мг/дм<sup>3</sup></td>
+                <td>{{waterPollution?.hardness}}мг-екв/дм<sup>3</sup></td>
+                <td>{{waterPollution?.sulfates}}мг/дм<sup>3</sup></td>
+                <td>{{waterPollution?.chlorides}}мг/дм<sup>3</sup></td>
+                <td>{{waterPollution?.copper}}мг/дм</td>
+                <td>{{waterPollution?.manganese}}мг/дм<sup>3</sup></td>
+                <td>{{waterPollution?.iron}}мг/дм<sup>3</sup></td>
+                <td>{{waterPollution?.chlorophenol}}мг/дм<sup>3</sup></td>
+                <td>{{waterPollution?.description}}</td>
+                <td><a (click)="onOpenWaterModal(waterPollution, 'delete')"
+                       style="background-color: rgb(185, 37, 27); color: white; "
+                       class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i
+                  class="fa fa-times"></i></a></td>
+              </tr>
+              </tbody>
+            </table>
+            <hr>
+            <div class="row">
+              <div class="col-md-4 col-md-offset-4 text-center">
+                <ul class="pagination" id="myPager"></ul>
+              </div>
+            </div>
+          </div>
+          <!--/table-resp-->
+          <hr>
+        </div>
+
+        <div class="tab-pane active" id="soil">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+              <tr>
+                <th>№</th>
+                <th>Локація</th>
+                <th>Дата спостереження</th>
+                <th>pH</th>
+                <th>Кислотність</th>
+                <th>Мінерали</th>
+                <th>Вміст вологи</th>
+                <th>Опис</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody id="items" *ngFor="let soilPollution of soilPollutions">
+              <tr>
+                <td>{{soilPollution?.id}}</td>
+                <td><a (click)="onOpenSoilModal(soilPollution, 'openLocation')">{{soilPollution?.location}}</a></td>
+                <td>{{soilPollution?.date}}</td>
+                <td>{{soilPollution?.pH}}</td>
+                <td>{{soilPollution?.acidity}}</td>
+                <td>{{soilPollution?.minerals}}</td>
+                <td>{{soilPollution?.humidity}}</td>
+                <td>{{soilPollution?.description}}</td>
+                <td><a (click)="onOpenSoilModal(soilPollution, 'delete')"
+                       style="background-color: rgb(185, 37, 27); color: white; "
+                       class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i
+                  class="fa fa-times"></i></a></td>
+              </tr>
+              </tbody>
+            </table>
+            <hr>
+            <div class="row">
+              <div class="col-md-4 col-md-offset-4 text-center">
+                <ul class="pagination" id="myPager"></ul>
+              </div>
+            </div>
+          </div>
+          <!--/table-resp-->
+          <hr>
+        </div>
+
+        <div class="tab-pane active" id="air">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+              <tr>
+                <th>№</th>
+                <th>Локація</th>
+                <th>Дата спостереження</th>
+                <th>PM1</th>
+                <th>PM2.5</th>
+                <th>PM10</th>
+                <th>Температура</th>
+                <th>Відносна⠀вологість</th>
+                <th>Атмосферний⠀тиск</th>
+                <th>Опис</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody id="items" *ngFor="let airPollution of airPollutions">
+              <tr>
+                <td>{{airPollution?.id}}</td>
+                <td><a (click)="onOpenAirModal(airPollution, 'openLocation')">{{airPollution?.location}}</a></td>
+                <td>{{airPollution?.date}}</td>
+                <td>{{airPollution?.pm1}}</td>
+                <td>{{airPollution?.pm2_5}}</td>
+                <td>{{airPollution?.pm10}}</td>
+                <td>{{airPollution?.temperature}}</td>
+                <td>{{airPollution?.humidity}}</td>
+                <td>{{airPollution?.pressure}}</td>
+                <td>{{airPollution?.description}}</td>
+                <td><a (click)="onOpenAirModal(airPollution, 'delete')"
+                       style="background-color: rgb(185, 37, 27); color: white; "
+                       class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i
+                  class="fa fa-times"></i></a></td>
+              </tr>
+              </tbody>
+            </table>
+            <hr>
+            <div class="row">
+              <div class="col-md-4 col-md-offset-4 text-center">
+                <ul class="pagination" id="myPager"></ul>
+              </div>
+            </div>
+          </div>
+          <!--/table-resp-->
+          <hr>
+        </div>
+
+        <div class="tab-pane active" id="radiation">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+              <tr>
+                <th>№</th>
+                <th>Локація</th>
+                <th>γ-Радіація</th>
+                <th>Дата спостереження</th>
+                <th>Опис</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody id="items" *ngFor="let radiationState of radiationStates">
+              <tr>
+                <td>{{radiationState?.id}}</td>
+                <td><a (click)="onOpenRadiationModal(radiationState, 'openLocation')">{{radiationState?.location}}</a></td>
+                <td>{{radiationState?.radiationLevel}} (нЗв/год)</td>
+                <td>{{radiationState?.date}}</td>
+                <td>{{radiationState?.description}}</td>
+                <td><a (click)="onOpenRadiationModal(radiationState, 'delete')"
+                       style="background-color: rgb(185, 37, 27); color: white; "
+                       class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i
+                  class="fa fa-times"></i></a></td>
+              </tr>
+              </tbody>
+            </table>
+            <hr>
+            <div class="row">
+              <div class="col-md-4 col-md-offset-4 text-center">
+                <ul class="pagination" id="myPager"></ul>
+              </div>
+            </div>
+          </div>
+          <!--/table-resp-->
+          <hr>
+        </div>
+      </div>
+      <!--/tab-pane-->
+    </div>
+    <!--/tab-content-->
+
+  </div>
+  <!--/col-9-->
+</div>
+<!--/row-->
+
+<!--users conteiners-->
+<div class="container" id="main-container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="separator-png" style="height: 30px;"></div>
+    </div>
+    <div *ngFor="let employee of employees" class="col-md-6 col-xl-3">
+      <div class="card m-b-30">
+        <div class="card-body row">
+          <div class="col-6">
+            <a href="" *ngIf="employee.imageUrl.length<=10"><img
+              src="https://media.istockphoto.com/vectors/error-page-or-file-not-found-icon-vector-id924949200?k=20&m=924949200&s=170667a&w=0&h=-g01ME1udkojlHCZeoa1UnMkWZZppdIFHEKk6wMvxrs="
+              alt="" class="img-fluid rounded-circle w-100"></a>
+            <a href="" *ngIf="employee.imageUrl.length>=10"><img src="{{employee?.imageUrl}}" alt=""
+                                                                 class="img-fluid rounded-circle w-80"></a>
+          </div>
+          <div class="col-6 card-title align-self-center mb-0">
+            <a *ngIf="employee?.connectionStatus==true" href=""><img
+              src="https://www.acboatrentals.com/wp-content/uploads/2021/09/new.png" alt=""
+              class="img-fluid rounded-circle" style="width: 100%; height: auto;"></a>
+            <h6>{{employee?.name}}</h6>
+          </div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item ">
+            <span class="pull-left"><strong>Job</strong></span><br>{{employee?.jobTitle}}</li>
+          <li class="list-group-item ">
+            <span class="pull-left"><strong>Education</strong></span><br>{{employee?.education}}</li>
+          <li class="list-group-item ">
+            <a (click)="onOpenModal(employee, 'openLocation')"><span class="pull-left"><strong>Home location</strong></span><br>{{employee?.location}}</a></li>
+          <li class="list-group-item ">
+            <span class="pull-left"><strong>Email</strong></span><br>{{employee?.email}}</li>
+          <li class="list-group-item ">
+            <span class="pull-left"><strong>Phone</strong></span><br>{{employee?.phone}}</li>
+          <li *ngIf="employee?.blockStatus==true" style="background-color: rgb(185, 37, 27);"
+              class="list-group-item text-right">
+            <span class="pull-left"><strong>Block status</strong></span>{{employee?.blockStatus}}</li>
+          <li *ngIf="employee?.blockStatus==false" style="background-color: #009961;"
+              class="list-group-item text-right">
+            <span class="pull-left"><strong>Block status</strong></span>{{employee?.blockStatus}}</li>
+        </ul>
+        <div class="card-body">
+          <div class="float-right btn-group btn-group-sm">
+            <a *ngIf="employee?.blockStatus==true" (click)="onBlock(employee)" class="btn btn-primary tooltips"
+               data-placement="top" style="background-color: #009961; color: white; "><i class="fa fa-ban"></i> Unblock</a>
+            <a *ngIf="employee?.blockStatus==false" (click)="onBlock(employee)" class="btn btn-primary tooltips"
+               data-placement="top" style="background-color: rgb(87, 85, 85); color: white; "><i class="fa fa-ban"></i>
+              Block</a>
+            <a (click)="onOpenModal(employee, 'delete')" style="background-color: rgb(185, 37, 27); color: white; "
+               class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i
+              class="fa fa-times"></i> Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Employee Modal -->
+<div class="modal fade" id="addEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="addEmployeeModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sign up</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #addForm="ngForm" (ngSubmit)="onAddEmloyee(addForm)">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" ngModel name="name" class="form-control" id="name" placeholder="Name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" ngModel name="email" class="form-control" id="email" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Job</label>
+            <input type="text" ngModel name="jobTitle" class="form-control" id="jobTile" placeholder="Job" required>
+          </div>
+          <div class="form-group">
+            <label for="name">Education</label>
+            <input type="text" ngModel name="education" class="form-control" id="education" placeholder="Education"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="name">Home location</label>
+            <input type="text" ngModel name="location" class="form-control" id="location" placeholder="Home location"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" ngModel name="phone" class="form-control" id="phone" placeholder="Phone" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Image URL</label>
+            <input type="text" ngModel name="imageUrl" class="form-control" id="imageUrl" placeholder="Image URL"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="name">User Name</label>
+            <input type="text" ngModel name="userName" class="form-control" id="userName" placeholder="User name"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="name">Password</label>
+            <input type="password" ngModel name="password" class="form-control" id="password" placeholder="Password"
+                   required value="password">
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="add-employee-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Sign up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Water Modal -->
+<div class="modal fade" id="addWaterModal" tabindex="-1" role="dialog" aria-labelledby="addWaterModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Забруднення води</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #addWaterForm="ngForm" (ngSubmit)="onAddWater(addWaterForm)">
+          <div class="form-group">
+            <label for="text">Локація</label>
+            <input type="text" ngModel name="location" class="form-control" id="location" placeholder="location"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="text">Дата</label>
+            <input type="text" ngModel name="date" class="form-control" id="date" placeholder="date" required>
+          </div>
+          <div class="form-group">
+            <label for="number">pH</label>
+            <input type="number" ngModel name="pH" class="form-control" id="pH" placeholder="pH" required>
+          </div>
+          <div class="form-group">
+            <label for="number">Густина</label>
+            <input type="number" ngModel name="density" class="form-control" id="density" placeholder="density"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="number">Твердність загальна</label>
+            <input type="number" ngModel name="hardness" class="form-control" id="hardness" placeholder="hardness"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="number">Сульфати</label>
+            <input type="number" ngModel name="sulfates" class="form-control" id="sulfates" placeholder="sulfates"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="number">Хлориди</label>
+            <input type="number" ngModel name="chlorides" class="form-control" id="chlorides" placeholder="chlorides"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="number">Мідь</label>
+            <input type="number" ngModel name="copper" class="form-control" id="copper" placeholder="copper" required>
+          </div>
+          <div class="form-group">
+            <label for="number">Марганець</label>
+            <input type="number" ngModel name="manganese" class="form-control" id="manganese" placeholder="manganese"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="number">Залізо</label>
+            <input type="number" ngModel name="iron" class="form-control" id="iron" placeholder="iron" required>
+          </div>
+          <div class="form-group">
+            <label for="number">Хлорфенол</label>
+            <input type="number" ngModel name="chlorophenol" class="form-control" id="chlorophenol"
+                   placeholder="chlorophenol" required>
+          </div>
+          <div class="form-group">
+            <label for="text">Опис</label>
+            <input type="text" ngModel name="description" class="form-control" id="description"
+                   placeholder="description"
+                   required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="add-water-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button [disabled]="addWaterForm.invalid" type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Soil Modal -->
+<div class="modal fade" id="addSoilModal" tabindex="-1" role="dialog" aria-labelledby="addSoilModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Забруднення грунту</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #addSoilForm="ngForm" (ngSubmit)="onAddSoil(addSoilForm)">
+          <div class="form-group">
+            <label for="text">Локація</label>
+            <input type="text" ngModel name="location" class="form-control" id="location" placeholder="location"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="text">Дата</label>
+            <input type="text" ngModel name="date" class="form-control" id="date" placeholder="date" required>
+          </div>
+          <div class="form-group">
+            <label for="number">pH</label>
+            <input type="number" ngModel name="pH" class="form-control" id="pH" placeholder="pH" required>
+          </div>
+          <div class="form-group">
+            <label for="number">Кислотність</label>
+            <input type="number" ngModel name="acidity" class="form-control" id="acidity" placeholder="acidity"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="number">Мінерали</label>
+            <input type="number" ngModel name="minerals" class="form-control" id="minerals" placeholder="minerals"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="number">Вологість</label>
+            <input type="number" ngModel name="humidity" class="form-control" id="humidity" placeholder="humidity"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="text">Опис</label>
+            <input type="text" ngModel name="description" class="form-control" id="description"
+                   placeholder="description"
+                   required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="add-soil-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button [disabled]="addSoilForm.invalid" type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Air Modal -->
+<div class="modal fade" id="addAirModal" tabindex="-1" role="dialog" aria-labelledby="addAirModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Забруднення повітря</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #addAirForm="ngForm" (ngSubmit)="onAddAir(addAirForm)">
+          <div class="form-group">
+            <label for="text">Локація</label>
+            <input type="text" ngModel name="location" class="form-control" id="location" placeholder="location"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="text">Дата</label>
+            <input type="text" ngModel name="date" class="form-control" id="date" placeholder="date" required>
+          </div>
+          <div class="form-group">
+            <label for="number">pm1</label>
+            <input type="number" ngModel name="pm1" class="form-control" id="pm1" placeholder="pm1" required>
+          </div>
+          <div class="form-group">
+            <label for="number">pm2_5</label>
+            <input type="number" ngModel name="pm2_5" class="form-control" id="pm2_5" placeholder="pm2_5" required>
+          </div>
+          <div class="form-group">
+            <label for="number">pm10</label>
+            <input type="number" ngModel name="pm10" class="form-control" id="pm10" placeholder="pm10" required>
+          </div>
+          <div class="form-group">
+            <label for="number">Температура</label>
+            <input type="number" ngModel name="temperature" class="form-control" id="temperature"
+                   placeholder="temperature" required>
+          </div>
+          <div class="form-group">
+            <label for="number">Вологість</label>
+            <input type="number" ngModel name="humidity" class="form-control" id="humidity" placeholder="humidity"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="number">Тиск</label>
+            <input type="number" ngModel name="pressure" class="form-control" id="pressure" placeholder="pressure"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="text">Опис</label>
+            <input type="text" ngModel name="description" class="form-control" id="description"
+                   placeholder="description"
+                   required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="add-air-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button [disabled]="addAirForm.invalid" type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Radiation Modal -->
+<div class="modal fade" id="addRadiationModal" tabindex="-1" role="dialog" aria-labelledby="addRadiationModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Радіаційне забруднення</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #addRadiationForm="ngForm" (ngSubmit)="onAddRadiation(addRadiationForm)">
+          <div class="form-group">
+            <label for="text">Локація</label>
+            <input type="text" ngModel name="location" class="form-control" id="location" placeholder="location"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="text">Дата</label>
+            <input type="text" ngModel name="date" class="form-control" id="date" placeholder="date" required>
+          </div>
+          <div class="form-group">
+            <label for="number">γ-Радіація</label>
+            <input type="number" ngModel name="radiationLevel" class="form-control" id="radiationLevel"
+                   placeholder="radiationLevel" required>
+          </div>
+          <div class="form-group">
+            <label for="text">Опис</label>
+            <input type="text" ngModel name="description" class="form-control" id="description"
+                   placeholder="description"
+                   required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="add-radiation-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button [disabled]="addRadiationForm.invalid" type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add UserComplaint Modal -->
+<div class="modal fade" id="addUserComplaintModal" tabindex="-1" role="dialog" aria-labelledby="addUserComplaintModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Скарга на забруднення</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #addUserComplaintForm="ngForm" (ngSubmit)="onAddUserComplaint(addUserComplaintForm)">
+          <div class="form-group">
+            <label for="text">Повне ім'я</label>
+            <input type="text" ngModel name="fullName" class="form-control" id="fullName" placeholder="-"                   required>
+          </div>
+          <div class="form-group">
+            <label for="text">Контакти</label>
+            <input type="text" ngModel name="contact" class="form-control" id="contact" placeholder="email or phone number"                   required>
+          </div>
+          <div class="form-group">
+            <label for="text">Дата</label>
+            <input type="text" ngModel name="date" class="form-control" id="date" placeholder="date" required>
+          </div>
+          <div class="form-group">
+            <label for="text">Локація</label>
+            <input type="text" ngModel name="location" class="form-control" id="location" placeholder="location"                   required>
+          </div>
+          <div class="form-group">
+            <label for="text">Тип</label>
+            <select type="text" ngModel name="type" class="form-control" id="type" required>
+<option value="вода">вода</option>
+<option value="грунт">грунт</option>
+<option value="повітря">повітря</option>
+<option value="радіація">радіація</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="text">Відео </label>
+            <input type="text" ngModel name="videoUrl" class="form-control" id="Url"                   placeholder="videoUrl"                   required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="add-user-complaint-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button [disabled]="addUserComplaintForm.invalid" type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- login Employee Modal -->
+<div class="modal fade" id="loginEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="loginEmployeeModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sign in</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="onLogin()">
+          <div class="form-group">
+            <label for="name">User name</label>
+            <input type="text" class="form-control" id="loginName" placeholder="User name" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+          </div>
+          <div class="modal-footer">
+            <p id="loginNotification" style="color: red; font-size: 14px; display: none;">Введені неправельні дані для
+              входу.<br> Можливо ваш акаунт проходить перевірку<br>спробуйте увійти пізніше.</p>
+            <button type="button" id="login-employee-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Modal -->
+<div class="modal fade" id="updateEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="employeeEditModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateEmployeeModalLabel">Edit profile {{editEmployee?.name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #editForm="ngForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" ngModel="{{editEmployee?.name}}" name="name" class="form-control" id="name"
+                   aria-describedby="emailHelp" placeholder="Name">
+          </div>
+          <input type="hidden" ngModel="{{editEmployee?.id}}" name="id" class="form-control" id="id" placeholder="id">
+          <input type="hidden" ngModel="{{editEmployee?.blockStatus}}" name="blockStatus" class="form-control"
+                 id="blockStatus" placeholder="blockStatus">
+          <input type="hidden" ngModel="{{editEmployee?.connectionStatus}}" name="connectionStatus" class="form-control"
+                 id="connectionStatus" placeholder="connectionStatus">
+          <input type="hidden" ngModel="{{editEmployee?.userRole}}" name="userRole" class="form-control" id="userRole"
+                 placeholder="userRole">
+          <input type="hidden" ngModel="{{editEmployee?.employeeCode}}" name="userCode" class="form-control"
+                 id="userCode" placeholder="userCode">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" ngModel="{{editEmployee?.email}}" name="email" class="form-control" id="email"
+                   placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="phone">Job</label>
+            <input type="text" ngModel="{{editEmployee?.jobTitle}}" name="jobTitle" class="form-control" id="jobTitle"
+                   placeholder="Job">
+          </div>
+          <div class="form-group">
+            <label for="phone">Education</label>
+            <input type="text" ngModel="{{editEmployee?.education}}" name="education" class="form-control"
+                   id="education" placeholder="Education">
+          </div>
+          <div class="form-group">
+            <label for="phone">Home location</label>
+            <input type="text" ngModel="{{editEmployee?.location}}" name="location" class="form-control" id="location"
+                   placeholder="Home location">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" ngModel="{{editEmployee?.phone}}" name="phone" class="form-control" id="phone"
+                   name="phone" placeholder="Phone">
+          </div>
+          <div class="form-group">
+            <label for="phone">Image URL</label>
+            <input type="text" ngModel="{{editEmployee?.imageUrl}}" name="imageUrl" class="form-control" id="imageUrl"
+                   placeholder="Image URL">
+          </div>
+          <div class="form-group">
+            <label for="phone">User Name</label>
+            <input type="text" ngModel="{{editEmployee?.userName}}" name="userName" class="form-control" id="userName"
+                   placeholder="User Name">
+          </div>
+          <div class="form-group">
+            <label for="phone">Password</label>
+            <input type="password" ngModel="{{editEmployee?.password}}" name="password" class="form-control"
+                   id="_password"
+                   placeholder="Password">
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
+            <button (click)="onUpdateEmloyee(editForm.value)" data-dismiss="modal" class="btn btn-primary">
+              Save changes
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Complaint Modal -->
+<div class="modal fade" id="updateComplaintModal" tabindex="-1" role="dialog" aria-labelledby="updateComplaintModal"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateEmployeeModalLabel">Форма змінення статусу скарги № {{editUserComplaint?.id}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #editComplaintForm="ngForm">
+          <input type="hidden" ngModel="{{editUserComplaint?.id}}" name="id" class="form-control" id="id" placeholder="id">
+          <input type="hidden" ngModel="{{editUserComplaint?.fullName}}" name="fullName" class="form-control" id="fullName" placeholder="fullName">
+          <input type="hidden" ngModel="{{editUserComplaint?.contact}}" name="contact" class="form-control" id="contact" placeholder="contact">
+          <input type="hidden" ngModel="{{editUserComplaint?.videoUrl}}" name="videoUrl" class="form-control" id="videoUrl" placeholder="videoUrl">
+          <input type="hidden" ngModel="{{editUserComplaint?.type}}" name="type" class="form-control" id="type" placeholder="type">
+          <input type="hidden" ngModel="{{editUserComplaint?.location}}" name="location" class="form-control" id="location" placeholder="location">
+          <input type="hidden" ngModel="{{editUserComplaint?.date}}" name="date" class="form-control" id="date" placeholder="date">
+          <div class="form-group">
+            <label for="text">Статус</label>                   
+                   <select type="text" ngModel="{{editUserComplaint?.status}}" name="status" class="form-control" id="status"                   placeholder="status">
+                    <option value="inactive">Неактивний</option>
+                    <option value="active">Активний</option>
+                    <option value="completed">Завершений</option>
+                                </select>
+          </div>
+          <div class="form-group">
+            <label for="text">Опис</label>
+            <input type="text" ngModel="{{editUserComplaint?.description}}" name="description" class="form-control" id="description"
+                   placeholder="Job">
+          </div>
+          
+          <div class="modal-footer">
+            <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
+            <button (click)="onUpdateComplaint(editComplaintForm.value)" data-dismiss="modal" class="btn btn-primary">
+              Save changes
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModelLabel">Delete User</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Ви впевнені, що хочете видалити співробітника {{deleteEmployee?.name}}?</p>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+          <button (click)="onDeleteEmloyee(deleteEmployee?.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- registration notification Modal -->
+<div class="modal fade" id="registrationNotificationModal" tabindex="-1" role="dialog"
+     aria-labelledby="registrationNotificationModelLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registrationNotificationModelLabel">Дякуємо за реєстрацію</h5>
+      </div>
+      <div class="modal-body">
+        <p>Очікуйте активації вашого аккаунту</p>
+        <div class="modal-footer">
+          <button class="btn btn-danger" data-dismiss="modal" style="background-color: #009961; border-color: #009961;">
+            Ok
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Notification for no employees -->
+<div *ngIf="employees?.length == 0" class="col-lg-12 col-md-12 col-xl-12" id="notFoundEmployee" style="display: none;">
+  <div class="alert alert-info" role="alert">
+    <p>Жодного користувача не знайдено.</p>
+  </div>
+</div>
+
+<!-- airmap Modal -->
+<div class="modal fade" id="AirMapModal" tabindex="-1" role="dialog" aria-labelledby="AirMapModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document" style="margin: 100px 300px;">
+    <div class="modal-content" style="width: 800px; height: 500px;">
+      <div class="modal-header">
+        <h6>Мапа якості повітря</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <iframe style="border:0; width: 90%; height: 400px; margin-left: 5%" 
+        src="https://www.saveecobot.com/maps" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- radiation Modal -->
+<div class="modal fade" id="RadiationMapModal" tabindex="-1" role="dialog" aria-labelledby="AirMapModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document" style="margin: 100px 300px;">
+    <div class="modal-content" style="width: 800px; height: 500px;">
+      <div class="modal-header">
+        <h6>Мапа радіаційного стану</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <iframe style="border:0; width: 90%; height: 400px; margin-left: 5%" 
+        src="https://www.saveecobot.com/radiation-maps" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- fire Modal -->
+<div class="modal fade" id="FireMapModal" tabindex="-1" role="dialog" aria-labelledby="AirMapModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document" style="margin: 100px 300px;">
+    <div class="modal-content" style="width: 800px; height: 500px;">
+      <div class="modal-header">
+        <h6>Мапа пожеж</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <iframe style="border:0; width: 90%; height: 400px; margin-left: 5%" 
+        src="https://www.saveecobot.com/fire-maps" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
