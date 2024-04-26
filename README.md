@@ -7,6 +7,6 @@ https://github.com/MykhailoKlymchuk/CourseWorkWeb/tree/main/BackEnd
 https://github.com/MykhailoKlymchuk/CourseWorkWeb/tree/main/FrontEnd
 
 Documentation in a docx file (description and example of the interface)
-https://github.com/MykhailoKlymchuk/CourseWorkWeb/tree/main/documentation.docx
+https://github.com/MykhailoKlymchuk/CourseWorkWeb/tree/main/documentation.pdf
 
 
